@@ -103,6 +103,18 @@ def vit_small(*, rngs, **kwargs) -> ViT:
     kwargs.setdefault("num_heads", 6)
     return ViT(rngs=rngs, **kwargs)
 
+def vit_base(*, rngs, **kwargs) -> ViT:
+    kwargs.setdefault("embed_dim", 768)
+    kwargs.setdefault("depth", 12)
+    kwargs.setdefault("num_heads", 12)
+    return ViT(rngs=rngs, **kwargs)
+
+
+def vit_large(*, rngs, **kwargs) -> ViT:
+    kwargs.setdefault("embed_dim", 1024)
+    kwargs.setdefault("depth", 24)
+    kwargs.setdefault("num_heads", 16)
+    return ViT(rngs=rngs, **kwargs)
 
 
 def build_vit(cfg: ModelConfig, *, rngs, dtype=None) -> ViT:
