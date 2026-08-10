@@ -5,6 +5,7 @@ class DataConfig:
     data_root: str = "data/chexpert"
     train_dir: str = "train"
     valid_dir: str = "valid"
+    img_scale: int = 320
     image_size: int = 224
     local_size: int = 96
     global_views: int = 2
@@ -28,8 +29,6 @@ class DataConfig:
     batch_size: int = 128
     num_workers: int = 8
     frontal_only: bool = True
-    shuffle_buffer: int = 16384
-    num_shards: int = 256
 
 
 @dataclass(frozen=True)
