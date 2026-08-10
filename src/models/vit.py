@@ -130,5 +130,4 @@ def build_vit(cfg: ModelConfig, *, rngs, dtype=None) -> ViT:
         dtype=dtype,
     )
 
-
-
+__all__ = ["ViT", "vit_tiny", "vit_small", "vit_base", "vit_large", "build_vit"]
