@@ -16,9 +16,9 @@ class Projector(nnx.Module):
     ):
         self.entry = nnx.Linear(embed_dim, proj_embed, use_bias=True, dtype=dtype, rngs=rngs)
         self.fc1 = nnx.Linear(proj_embed, proj_hidden, use_bias=True, dtype=dtype, rngs=rngs)
-        self.bn1 = nnx.BatchNorm(proj_hidden, momentum=0.1, rngs=rngs)
+        self.bn1 = nnx.BatchNorm(proj_hidden, momentum=0.9, rngs=rngs)
         self.fc2 = nnx.Linear(proj_hidden, proj_hidden, use_bias=True, dtype=dtype, rngs=rngs)
-        self.bn2 = nnx.BatchNorm(proj_hidden, momentum=0.1, rngs=rngs)
+        self.bn2 = nnx.BatchNorm(proj_hidden, momentum=0.9, rngs=rngs)
         self.fc3 = nnx.Linear(proj_hidden, proj_dim, use_bias=True, dtype=dtype, rngs=rngs)
 
     def __call__(self, x: jnp.ndarray, use_running_average: bool = False) -> jnp.ndarray:
