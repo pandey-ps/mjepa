@@ -1,0 +1,6 @@
+jax[cuda12]
+flax
+optax
+orbax-checkpoint
+pillow
+numpy
